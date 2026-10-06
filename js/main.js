@@ -32,26 +32,8 @@
   menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
-  // ---- Project filters ----
-  var filters = document.querySelectorAll('.filter');
-  var projects = document.querySelectorAll('.project');
-  filters.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var f = btn.getAttribute('data-filter');
-      filters.forEach(function (b) {
-        var on = b === btn;
-        b.classList.toggle('is-active', on);
-        b.setAttribute('aria-pressed', String(on));
-      });
-      projects.forEach(function (p) {
-        var show = f === 'all' || p.getAttribute('data-cat').split(' ').indexOf(f) !== -1;
-        p.hidden = !show;
-      });
-    });
-  });
-
   // ---- Reveal on scroll ----
-  var reveals = document.querySelectorAll('.section-head, .card, .what, .project, .stat, .about-text, .facts');
+  var reveals = document.querySelectorAll('.section-head, .card, .what, .project, .app, .stat, .about-text, .facts');
   reveals.forEach(function (el) { el.classList.add('reveal'); });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
