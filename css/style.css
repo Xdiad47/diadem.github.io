@@ -171,6 +171,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .project h3 { font-size: 1.25rem; }
 .project p { color: var(--muted); font-size: 15px; margin: 0; }
 .project .chips { margin-top: auto; padding-top: 4px; }
+.project .points { display: grid; gap: 8px; }
+.project .points li { position: relative; padding-left: 18px; color: var(--muted); font-size: 15px; }
+.project .points li::before { content: ""; position: absolute; left: 0; top: .75em; width: 7px; height: 1.5px; background: var(--accent); }
+.project p.fine { font-size: 13px; font-style: italic; color: var(--muted); opacity: .85; }
+@media (min-width: 900px) { .project.feature { grid-column: span 2; } }
 .tag { font: 500 12px/1 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
 .tag.award { color: var(--award); }
 .p-links { display: flex; gap: 18px; padding-top: 4px; border-top: 1px solid var(--line); margin-top: 2px; padding-top: 14px; }

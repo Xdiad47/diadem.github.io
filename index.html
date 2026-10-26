@@ -297,11 +297,18 @@
           <div class="p-links"><a href="https://flowmind-frontend-alpha.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a href="https://github.com/Xdiad47/FlowMind-ai-assistant" target="_blank" rel="noopener">Code ↗</a></div>
         </article>
 
-        <article class="project">
-          <div class="p-top"><span class="tag">Web · RAG</span></div>
-          <h3>Ayurveda AI</h3>
-          <p>A consumer RAG app that gives Ayurvedic home remedies by retrieving answers from trusted PDF knowledge sources instead of generating generic responses.</p>
-          <ul class="chips small"><li>Python</li><li>Flask</li><li>Docker</li><li>RAG</li></ul>
+        <article class="project feature">
+          <div class="p-top"><span class="tag">Web · RAG with safety guardrails</span></div>
+          <h3>AyurSutra AI</h3>
+          <p>Ask a health question in everyday words and get a cited answer drawn only from a book of traditional Ayurvedic home remedies. Dosages are hidden, and emergencies get a fixed safety message instead of generated advice. I built all of it: data cleaning, retrieval, the safety layer, a FastAPI backend, a Next.js frontend, streaming answers, and CI/CD with automatic rollback.</p>
+          <ul class="points">
+            <li>Tuned retrieval against a gold set and a held-out set (Recall@5 0.61 → 0.79), and measured and rejected a reranker and hybrid search.</li>
+            <li>Added automated faithfulness checks that caught real problems, such as dosage leaks.</li>
+            <li>Runs entirely on free tiers, within a 2 GB server memory limit.</li>
+          </ul>
+          <ul class="chips small"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>ChromaDB</li><li>Groq</li><li>Next.js</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <p class="fine">For information only, not medical advice.</p>
+          <div class="p-links"><a href="https://ayurveda.auraplanapp.com" target="_blank" rel="noopener">Live demo ↗</a></div>
         </article>
 
         <article class="project">
