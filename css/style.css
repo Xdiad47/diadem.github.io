@@ -183,7 +183,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .project .points li { position: relative; padding-left: 18px; color: var(--muted); font-size: 15px; }
 .project .points li::before { content: ""; position: absolute; left: 0; top: .75em; width: 7px; height: 1.5px; background: var(--accent); }
 .project p.fine { font-size: 13px; font-style: italic; color: var(--muted); opacity: .85; }
-@media (min-width: 900px) { .project.feature { grid-column: span 2; } }
+.project .f-main, .project .f-side { display: flex; flex-direction: column; gap: 14px; }
+.project .points strong { color: var(--text); font-weight: 600; }
+@media (min-width: 900px) {
+  .project.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px 44px; align-items: start; padding: 32px; }
+  .project.feature .f-side { height: 100%; }
+}
 .tag { font: 500 12px/1 var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
 .tag.award { color: var(--award); }
 .p-links { display: flex; gap: 18px; padding-top: 4px; border-top: 1px solid var(--line); margin-top: 2px; padding-top: 14px; }

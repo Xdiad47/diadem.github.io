@@ -272,9 +272,9 @@
             <img class="app-icon" src="images/apps/scanly.webp" width="64" height="64" alt="" loading="lazy">
             <div><h4>Scanly: Document &amp; PDF Scanner</h4><p class="by">Personal · solo</p></div>
           </div>
-          <p>A document scanner and PDF editor with OCR, page management, compression and e-signatures, backed by a RAG service for chatting with your PDFs.</p>
-          <p class="role"><strong>My role:</strong> Designed, built and published it solo, including the RAG backend.</p>
-          <ul class="chips small"><li>Kotlin</li><li>Jetpack Compose</li><li>Groq API</li><li>RAG</li><li>Embeddings</li></ul>
+          <p>An AI document scanner and PDF toolkit: camera scanning with OCR, e-signing, a full set of PDF tools, and AI chat that answers from your own uploaded PDFs. It ships as an Android app plus a companion web app on one shared account.</p>
+          <p class="role"><strong>My role:</strong> Designed, built and published it solo: the Android app, the web app and the RAG backend.</p>
+          <ul class="chips small"><li>Kotlin</li><li>Jetpack Compose</li><li>Next.js</li><li>FastAPI</li><li>RAG</li><li>Groq</li></ul>
           <div class="stores"><a class="store android" href="https://play.google.com/store/apps/details?id=io.xdiad.scanly" target="_blank" rel="noopener"><span>Android</span>Google Play ↗</a><a class="store web" href="https://scanlyy.in/" target="_blank" rel="noopener"><span>Web</span>Website ↗</a></div>
         </article>
       </div>
@@ -283,32 +283,46 @@
     <!-- Projects -->
     <section id="projects" class="wrap section">
       <div class="section-head">
-        <p class="kicker">More work</p>
-        <h2>AI and hackathon projects</h2>
-        <p class="section-sub">Web, backend and agent projects that aren’t in an app store.</p>
+        <p class="kicker">Case studies</p>
+        <h2>Full-stack and AI projects</h2>
+        <p class="section-sub">A closer look at what’s under the hood: RAG backends, web apps and agents.</p>
       </div>
 
       <div class="projects">
-        <article class="project">
-          <div class="p-top"><span class="tag">Web · AI agents</span></div>
-          <h3><a class="card-link" href="https://flowmind-frontend-alpha.vercel.app" target="_blank" rel="noopener">FlowMind</a></h3>
-          <p>An AI productivity workspace where founders manage meetings, calendars, tasks and company knowledge through a conversational interface, powered by AI agents and RAG.</p>
-          <ul class="chips small"><li>Python</li><li>Flask</li><li>AI Agents</li><li>RAG</li></ul>
-          <div class="p-links"><a href="https://flowmind-frontend-alpha.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a href="https://github.com/Xdiad47/FlowMind-ai-assistant" target="_blank" rel="noopener">Code ↗</a></div>
+        <article class="project feature">
+          <div class="f-main">
+            <div class="p-top"><span class="tag">Android + Web + RAG backend</span></div>
+            <h3><a class="card-link" href="https://scanlyy.in" target="_blank" rel="noopener">Scanly: AI Document Scanner &amp; PDF Toolkit</a></h3>
+            <p>A cross-platform document suite that ships as a native Android app and a companion web app, sharing one backend and account system so a user’s documents, chats and subscription carry over between both.</p>
+            <p>Scan with auto edge detection and OCR, e-sign, use a full PDF toolkit (merge, split, compress, rotate, rearrange, watermark, password protect and unlock, JPG ↔ PDF), make ID and passport photos with background removal, and chat with an AI that answers from your own uploaded PDFs. Free-tier gated, with Razorpay and Google Play Billing subscriptions.</p>
+          </div>
+          <div class="f-side">
+            <ul class="points">
+              <li><strong>Android:</strong> Kotlin, Jetpack Compose, Hilt, Room, Retrofit, OpenCV for scan processing, ML Kit Document Scanner, Firebase Auth.</li>
+              <li><strong>Web:</strong> Next.js (App Router) and TypeScript, statically exported and served from my own VPS behind nginx. The PDF tools and Photo Maker run in the browser, so those files are never uploaded.</li>
+              <li><strong>Backend:</strong> a Python/FastAPI RAG service. PyMuPDF and Tesseract handle parsing and OCR, sentence-transformers make the embeddings, Groq runs inference, and Razorpay and Play Billing purchases are verified server-side.</li>
+            </ul>
+            <ul class="chips small"><li>Kotlin</li><li>Jetpack Compose</li><li>Next.js</li><li>TypeScript</li><li>FastAPI</li><li>RAG</li><li>Groq</li><li>Firebase</li></ul>
+            <div class="p-links"><a href="https://scanlyy.in" target="_blank" rel="noopener">Website ↗</a><a href="https://play.google.com/store/apps/details?id=io.xdiad.scanly" target="_blank" rel="noopener">Google Play ↗</a></div>
+          </div>
         </article>
 
         <article class="project feature">
-          <div class="p-top"><span class="tag">Web · RAG with safety guardrails</span></div>
-          <h3><a class="card-link" href="https://ayurveda.auraplanapp.com" target="_blank" rel="noopener">AyurSutra AI</a></h3>
-          <p>Ask a health question in everyday words and get a cited answer drawn only from a book of traditional Ayurvedic home remedies. Dosages are hidden, and emergencies get a fixed safety message instead of generated advice. I built all of it: data cleaning, retrieval, the safety layer, a FastAPI backend, a Next.js frontend, streaming answers, and CI/CD with automatic rollback.</p>
-          <ul class="points">
-            <li>Tuned retrieval against a gold set and a held-out set (Recall@5 0.61 → 0.79), and measured and rejected a reranker and hybrid search.</li>
-            <li>Added automated faithfulness checks that caught real problems, such as dosage leaks.</li>
-            <li>Runs entirely on free tiers, within a 2 GB server memory limit.</li>
-          </ul>
-          <ul class="chips small"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>ChromaDB</li><li>Groq</li><li>Next.js</li><li>Docker</li><li>GitHub Actions</li></ul>
-          <p class="fine">For information only, not medical advice.</p>
-          <div class="p-links"><a href="https://ayurveda.auraplanapp.com" target="_blank" rel="noopener">Live demo ↗</a></div>
+          <div class="f-main">
+            <div class="p-top"><span class="tag">Web · RAG with safety guardrails</span></div>
+            <h3><a class="card-link" href="https://ayurveda.auraplanapp.com" target="_blank" rel="noopener">AyurSutra AI</a></h3>
+            <p>Ask a health question in everyday words and get a cited answer drawn only from a book of traditional Ayurvedic home remedies. Dosages are hidden, and emergencies get a fixed safety message instead of generated advice. I built all of it: data cleaning, retrieval, the safety layer, a FastAPI backend, a Next.js frontend, streaming answers, and CI/CD with automatic rollback.</p>
+            <p class="fine">For information only, not medical advice.</p>
+          </div>
+          <div class="f-side">
+            <ul class="points">
+              <li>Tuned retrieval against a gold set and a held-out set (Recall@5 0.61 → 0.79), and measured and rejected a reranker and hybrid search.</li>
+              <li>Added automated faithfulness checks that caught real problems, such as dosage leaks.</li>
+              <li>Runs entirely on free tiers, within a 2 GB server memory limit.</li>
+            </ul>
+            <ul class="chips small"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>ChromaDB</li><li>Groq</li><li>Next.js</li><li>Docker</li><li>GitHub Actions</li></ul>
+            <div class="p-links"><a href="https://ayurveda.auraplanapp.com" target="_blank" rel="noopener">Live demo ↗</a></div>
+          </div>
         </article>
 
         <article class="project">
